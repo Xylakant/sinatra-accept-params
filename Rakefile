@@ -1,22 +1,4 @@
-require 'rubygems'
 require 'rake'
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "sinatra-accept-params"
-    gem.summary = %Q{Parameter whitelisting for Sinatra}
-    gem.description = %Q{Parameter whitelisting for Sinatra.  Provides validation, defaults, and post-processing.}
-    gem.email = "nate@wiger.org"
-    gem.homepage = "http://github.com/nateware/sinatra-accept-params"
-    gem.authors = ["Nate Wiger"]
-    gem.add_development_dependency "bacon", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
 
 require 'rake/testtask'
 Rake::TestTask.new(:spec) do |spec|
