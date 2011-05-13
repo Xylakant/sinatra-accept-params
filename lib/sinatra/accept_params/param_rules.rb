@@ -64,16 +64,6 @@ module Sinatra
           end
         end
         
-        # Same thing for login_required, minus global flag
-        if @settings[:login]
-          # explicitly said :login => true
-          raise LoginRequired unless session[:username]
-        elsif @settings.has_key?(:login)
-          # explicitly said :login => false or :login => nil, so skip
-        else
-          # require login on anything non-GET
-          raise LoginRequired unless session[:username] || request.get?
-        end
       end
 
       # Allow nesting

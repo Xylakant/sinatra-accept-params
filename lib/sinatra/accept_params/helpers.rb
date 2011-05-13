@@ -26,11 +26,6 @@ module Sinatra
     def self.registered(app)
       app.helpers AcceptParams::Helpers
 
-      app.error Sinatra::AcceptParams::LoginRequired do
-        headers["WWW-Authenticate"] = %(Basic realm="Login required")
-        halt 401, "Authorization required"
-      end
-
       # Have to enumerate errors, because Sinatra uses is_a? test, not inheritance
       [ Sinatra::AcceptParams::ParamError,
         Sinatra::AcceptParams::NoParamsDefined,

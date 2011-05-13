@@ -9,7 +9,6 @@ module Sinatra
     class InvalidParamType  < ParamError; end  #:nodoc:
     class InvalidParamValue < ParamError; end  #:nodoc:
     class SslRequired       < ParamError; end  #:nodoc:
-    class LoginRequired     < ParamError; end  #:nodoc:
   
     # Below here are settings that can be modified in environment.rb
     # Whether or not to cache rules for performance.
