@@ -15,11 +15,37 @@ SimpleCov.start
 Bundler.require(:default, :test)
 
 
+class TestApplication < Sinatra::Base
+  register Sinatra::AcceptParams
+
+  set :raise_errors, false
+  set :show_exceptions, false
+
+  get '/search' do
+    accept_params do |p|
+      p.integer :page, :default => 1, :minvalue => 1
+      p.integer :limit, :default => 20, :maxvalue => 100
+      p.boolean :wildcard, :default => false
+      p.string :search, :required => true
+      p.float :timeout, :default => 3.5
+    end
+    params_dump
+  end
+  
+  get '/users' do
+    accept_no_params
+  end
+  
+  get '/posts/:id' do
+    accept_only_id
+  end
+end
+
 class Riot::Situation
   include Rack::Test::Methods
 
   def app
-    @app
+    TestApplication
   end
 end
 
