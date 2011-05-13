@@ -58,12 +58,6 @@ describe "Sinatra::AcceptParams" do
 
     Sinatra::AcceptParams.type_validations[:cal_jr] = /ricky_bobby/
     Sinatra::AcceptParams.type_validations[:cal_jr].should == /ricky_bobby/
-
-    Sinatra::AcceptParams.ssl_enabled.should == true
-    Sinatra::AcceptParams.ssl_enabled = false
-    Sinatra::AcceptParams.ssl_enabled.should == false
-    Sinatra::AcceptParams.ssl_enabled = true
-    Sinatra::AcceptParams.ssl_enabled.should == true
   end
   
   it "should handle accept_params blocks" do
