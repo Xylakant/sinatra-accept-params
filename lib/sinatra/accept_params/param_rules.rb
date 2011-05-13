@@ -26,10 +26,6 @@ module Sinatra
           :ignore_columns    => AcceptParams.ignore_columns
         }.merge(settings)
 
-        # This is needed for resource_definitions
-        @settings[:indent] ||= 0
-        @settings[:indent] += 2
-
         if name.nil?
           @name = nil
         elsif is_model?(name)
@@ -40,12 +36,6 @@ module Sinatra
           @name = name.to_s
         end
 
-        # This is undocumented, and specific to SCEA
-        if @options.has_key? :to_id
-          klass = @options[:to_id]
-          @options[:process] = Proc.new{|v| klass.to_id(v)}
-          @options[:to] = "#{@name}_id"
-        end
       end
       
       # Validate the request object
