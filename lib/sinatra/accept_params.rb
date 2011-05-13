@@ -8,7 +8,6 @@ module Sinatra
     class UnexpectedParam   < ParamError; end  #:nodoc:
     class InvalidParamType  < ParamError; end  #:nodoc:
     class InvalidParamValue < ParamError; end  #:nodoc:
-    class SslRequired       < ParamError; end  #:nodoc:
   
     # Below here are settings that can be modified in environment.rb
     # Whether or not to cache rules for performance.
@@ -83,10 +82,6 @@ module Sinatra
       :datetime => /^[-\d:T\s]+$/,  # "T" is for ISO date format
     }
     
-    # Global on/off for SSL
-    def self.ssl_enabled=(val); @@ssl_enabled = val; end
-    def self.ssl_enabled; @@ssl_enabled; end
-    self.ssl_enabled = true
   end
 end
 

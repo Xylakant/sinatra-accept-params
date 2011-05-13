@@ -23,8 +23,7 @@ module Sinatra
           :ignore_unexpected => AcceptParams.ignore_unexpected,
           :remove_unexpected => AcceptParams.remove_unexpected,
           :ignore_params     => AcceptParams.ignore_params,
-          :ignore_columns    => AcceptParams.ignore_columns,
-          :ssl_enabled       => AcceptParams.ssl_enabled
+          :ignore_columns    => AcceptParams.ignore_columns
         }.merge(settings)
 
         # This is needed for resource_definitions
@@ -49,21 +48,9 @@ module Sinatra
         end
       end
       
-      # Validate the request object, checking the :ssl and :login flags
-      # This needs a big refactor, this whole class is DOG SLOW
+      # Validate the request object
+      # here for API compat atm, ssl and login methods removed
       def validate_request(request, session)
-        unless @settings[:ssl_enabled] == false or ENV['RACK_ENV'] == 'development'
-          if @settings[:ssl]
-            # explicitly said :ssl => true
-            raise SslRequired unless request.secure?
-          elsif @settings.has_key?(:ssl)
-            # explicitly said :ssl => false or :ssl => nil, so skip
-          else
-            # require SSL on anything non-GET
-            raise SslRequired unless request.get?
-          end
-        end
-        
       end
 
       # Allow nesting

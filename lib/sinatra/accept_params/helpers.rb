@@ -32,8 +32,8 @@ module Sinatra
         Sinatra::AcceptParams::MissingParam,
         Sinatra::AcceptParams::UnexpectedParam,
         Sinatra::AcceptParams::InvalidParamType,
-        Sinatra::AcceptParams::InvalidParamValue,
-        Sinatra::AcceptParams::SslRequired ].each do |cl|
+        Sinatra::AcceptParams::InvalidParamValue
+      ].each do |cl|
         app.error cl do
           halt 400, request.env['sinatra.error'].message
         end
