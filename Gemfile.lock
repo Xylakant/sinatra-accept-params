@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     sinatra-accept-params (0.1.0)
+      sinatra
 
 GEM
   remote: http://rubygems.org/
