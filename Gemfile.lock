@@ -1,0 +1,29 @@
+PATH
+  remote: .
+  specs:
+    sinatra-accept-params (0.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rack (1.2.2)
+    rack-test (0.6.0)
+      rack (>= 1.0)
+    riot (0.12.3)
+      rr
+    rr (1.0.2)
+    sinatra (1.2.6)
+      rack (~> 1.1)
+      tilt (< 2.0, >= 1.2.2)
+    tilt (1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rack
+  rack-test
+  riot
+  rr
+  sinatra
+  sinatra-accept-params!
