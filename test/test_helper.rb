@@ -14,6 +14,8 @@ SimpleCov.start
 
 Bundler.require(:default, :test)
 
+require 'accept_params'
+require 'sinatra/accept_params'
 
 class TestApplication < Sinatra::Base
   register Sinatra::AcceptParams

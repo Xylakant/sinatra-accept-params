@@ -4,7 +4,7 @@ require 'accept_params/param_rules'
 context "ParamRules object" do
   
   setup do 
-    p = Sinatra::AcceptParams::ParamRules.new({})
+    p = AcceptParams::ParamRules.new({})
     p.integer :integer, :minvalue => 5, :maxvalue => 7, :required => true
     p
   end
