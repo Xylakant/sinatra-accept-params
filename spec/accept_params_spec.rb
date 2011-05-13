@@ -35,11 +35,6 @@ end
 
 describe "Sinatra::AcceptParams" do
   it "should provide settings to control the lib" do
-    Sinatra::AcceptParams.cache_rules.should == false
-    Sinatra::AcceptParams.cache_rules = true
-    Sinatra::AcceptParams.cache_rules.should == true
-    Sinatra::AcceptParams.cache_rules = false
-    Sinatra::AcceptParams.cache_rules.should == false
 
     Sinatra::AcceptParams.ignore_params.should == %w( action controller commit format _method authenticity_token )
     Sinatra::AcceptParams.ignore_params << 'ricky_bobby'

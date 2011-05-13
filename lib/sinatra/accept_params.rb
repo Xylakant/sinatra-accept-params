@@ -9,12 +9,6 @@ module Sinatra
     class InvalidParamType  < ParamError; end  #:nodoc:
     class InvalidParamValue < ParamError; end  #:nodoc:
   
-    # Below here are settings that can be modified in environment.rb
-    # Whether or not to cache rules for performance.
-    def self.cache_rules=(val); @@cache_rules = val; end
-    def self.cache_rules; @@cache_rules; end
-    self.cache_rules = false
-
     # The list of params that we should allow (but not require) by default. It's as if we
     # said that all requests may_have these elements. By default this
     # list is set to:
