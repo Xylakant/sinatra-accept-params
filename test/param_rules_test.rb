@@ -1,5 +1,5 @@
 
-require 'sinatra/accept_params/param_rules'
+require 'accept_params/param_rules'
 
 context "ParamRules object" do
   

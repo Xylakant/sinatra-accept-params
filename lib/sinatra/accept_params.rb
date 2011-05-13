@@ -79,5 +79,5 @@ module Sinatra
   end
 end
 
-require 'sinatra/accept_params/param_rules'
-require 'sinatra/accept_params/helpers'  # DSL for Sinatra
+require 'accept_params/param_rules'
+require 'accept_params/helpers'  # DSL for Sinatra
