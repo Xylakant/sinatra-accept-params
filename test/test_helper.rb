@@ -9,8 +9,11 @@ rescue LoadError
 end
 
 require 'sinatra'
+require 'simplecov'
+SimpleCov.start
 
 Bundler.require(:default, :test)
+
 
 class Riot::Situation
   include Rack::Test::Methods

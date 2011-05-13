@@ -22,5 +22,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency(%q<sinatra>)
   s.add_development_dependency(%q<rack>)
   s.add_development_dependency(%q<rack-test>)
+  s.add_development_dependency(%q<simplecov>)
   
 end

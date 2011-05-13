@@ -2,6 +2,10 @@ require 'rubygems'
 require 'bacon'
 require 'rack/test'
 
+require 'simplecov'
+SimpleCov.start
+
+
 $LOAD_PATH.unshift(File.expand_path File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.expand_path File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'sinatra'
