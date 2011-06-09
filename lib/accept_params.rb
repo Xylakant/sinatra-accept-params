@@ -64,6 +64,8 @@ module AcceptParams
   def self.remove_unexpected; @@remove_unexpected; end
   self.remove_unexpected = false
 
+
+
   # How to validate parameters, if the person doesn't specify :validate
   def self.type_validations=(val); @@type_validations = val; end
   def self.type_validations; @@type_validations; end
